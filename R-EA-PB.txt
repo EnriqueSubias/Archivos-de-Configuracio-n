@@ -1,0 +1,161 @@
+!R-EA-PB Robert
+
+vlan 2 enable name "Produccion"
+
+vlan 3 enable name "Comercial"
+vlan 3 port default 2/1-4
+
+vlan 4 enable name "Administracion"
+vlan 4 port default 2/5-7
+
+vlan 5 enable name "Calidad"
+
+vlan 6 enable name "Expediciones"
+vlan 6 port default 2/8-9
+
+vlan 7 enable name "PLC"
+
+vlan 8 enable name "Seguridad"
+vlan 8 port default 2/10-12
+
+vlan 9 enable name "Climatizacion"
+vlan 9 port default 2/13-14
+
+vlan 10 enable name "Puntos-de-acceso"
+vlan 10 port default 2/15-16
+
+vlan 11 enable name "Radioenlace"
+
+vlan 12 enable name "Operadora-de-telefonia"
+vlan 12 port default 3/1
+
+vlan 13 enable name "Gestión-de-red"
+vlan 13 port default 2/21-24
+
+vlan 14 enable name "Sala multimedia"
+vlan 14 port mobile 1/1-5
+
+!vlan 15 enable name "Controladora"
+!vlan 15 port default 2/17
+
+!802.1Q - Puerto 2/21 va a R-EA-P1
+vlan 2 802.1q 2/21 “PORT 2/21 - Produccion"
+vlan 3 802.1q 2/21 “PORT 2/21 - Comercial"
+vlan 4 802.1q 2/21 “PORT 2/21 - Administracion"
+vlan 5 802.1q 2/21 “PORT 2/21 - Calidad"
+vlan 8 802.1q 2/21 “PORT 2/21 - Seguridad"
+vlan 9 802.1q 2/22 “PORT 2/21 - Climatizacion"
+vlan 10 802.1q 2/21 “PORT 2/21 - Puntos-de-acceso"
+!vlan 13 802.1q 2/21 “PORT 2/21 - Gestion-de-red" ! No hace falta envair esta vlan
+
+!802.1Q - Puerto 2/22 va a R-EA-P2
+vlan 2 802.1q 2/22 “PORT 2/22 - Produccion"
+vlan 3 802.1q 2/22 “PORT 2/22 - Comercial"
+vlan 4 802.1q 2/22 “PORT 2/22 - Administracion"
+vlan 5 802.1q 2/22 “PORT 2/22 - Calidad"
+vlan 6 802.1q 2/22 "PORT 2/22 - Expediciones
+vlan 8 802.1q 2/22 “PORT 2/22 - Seguridad"
+vlan 9 802.1q 2/22 “PORT 2/22 - Climatizacion"
+vlan 10 802.1q 2/22 “PORT 2/22 - Puntos-de-acceso"
+vlan 11 802.1q 2/22 “PORT 2/22 - Radioenlace"
+!vlan 13 802.1q 2/22 “PORT 2/22 - Gestion-de-red"
+
+!802.1Q - Puerto 2/23 va a R-EB-PB-0-0
+vlan 2 802.1q 2/23 “PORT 2/23 - Produccion"
+vlan 5 802.1q 2/23 “PORT 2/23 - Calidad"
+vlan 6 802.1q 2/23 “PORT 2/23 - Expediciones"
+vlan 7 802.1q 2/23 “PORT 2/23 - PLC"
+vlan 8 802.1q 2/23 “PORT 2/23 - Seguridad"
+vlan 10 802.1q 2/23 “PORT 2/23 - Puntos-de-acceso"
+!vlan 13 802.1q 2/23 “PORT 2/23 - Gestion-de-red"
+
+!802.1Q - Puerto 2/24 va al Altillo
+vlan 2 802.1q 2/24 “PORT 2/24 - Produccion"
+vlan 3 802.1q 2/24 “PORT 2/24 - Comercial"
+vlan 6 802.1q 2/24 “PORT 2/24 - Expediciones"
+vlan 7 802.1q 2/24 “PORT 2/24 - PLC"
+vlan 8 802.1q 2/24 “PORT 2/24 - Seguridad"
+vlan 9 802.1q 2/24 “PORT 2/24 - Climatizacion"
+vlan 10 802.1q 2/24 “PORT 2/24 - Puntos-de-acceso"
+!vlan 13 802.1q 2/24 “PORT 2/24 - Gestion-de-red"
+
+
+bridge mode 1x1
+bridge 1x1 2 protocol RSTP
+bridge 1x1 2 priority 16000
+bridge 1x1 3 protocol RSTP
+bridge 1x1 3 priority 16000
+bridge 1x1 4 protocol RSTP
+bridge 1x1 4 priority 16000
+bridge 1x1 6 protocol RSTP
+bridge 1x1 6 priority 16000
+bridge 1x1 7 protocol RSTP
+bridge 1x1 7 priority 16000
+bridge 1x1 8 protocol RSTP
+bridge 1x1 8 priority 16000
+bridge 1x1 9 protocol RSTP
+bridge 1x1 9 priority 16000
+bridge 1x1 10 protocol RSTP
+bridge 1x1 10 priority 16000
+bridge 1x1 11 protocol RSTP
+bridge 1x1 11 priority 16000
+bridge 1x1 12 protocol RSTP
+bridge 1x1 12 priority 16000
+bridge 1x1 13 protocol RSTP
+bridge 1x1 13 priority 16000
+bridge 1x1 14 protocol RSTP
+bridge 1x1 14 priority 16000
+!bridge 1x1 15 protocol RSTP
+!bridge 1x1 15 priority 16000
+
+!Mac Address Filter
+port-security 2/10
+port-security 2/10 mac-range low 00:e0:ff:00:00:00
+port-security 2/10 mac-range high 00:e0:ff:ff:ff:ff
+
+port-security 2/11
+port-security 2/11 mac-range low 00:e0:ff:00:00:00
+port-security 2/11 mac-range high 00:e0:ff:ff:ff:ff
+
+port-security 2/12
+port-security 2/12 mac-range low 00:e0:ff:00:00:00
+port-security 2/12 mac-range high 00:e0:ff:ff:ff:ff
+
+
+!Vlans Dinamicas
+vlan port mobile 1/1-5
+vlan 2 ip 195.85.72.0 255.255.255.128
+vlan 3 ip 195.85.72.128 255.255.255.192
+vlan 4 ip 195.85.72.192 255.255.255.192
+vlan 5 ip 195.85.73.0 255.255.255.224
+vlan 6 ip 195.85.73.32 255.255.255.240
+
+! NIVEL 3
+
+!interface
+ip interface "if-gestion-de-red" address 192.168.45.65 mask 255.255.255.240 vlan 13
+ip interface "if-internet" address 192.98.17.55 mask 255.255.255.240 vlan 12
+
+!RIP
+ip load rip
+ip rip interface "if-internet"
+ip rip interface "if-internet" status enable
+ip rip redist STATIC
+ip rip redist-filter STATIC 195.85.72.0 255.255.254.0
+ip rip redist status enable
+ip rip status enable
+
+
+!enviar a P1
+    !ip static-route 195.85.72.0 mask 255.255.255.128 gateway 192.168.45.66
+    !ip static-route 195.85.72.128 mask 255.255.255.192 gateway 192.168.45.66
+    !ip static-route 195.85.72.192 mask 255.255.255.192 gateway 192.168.45.66
+ip static-route 195.85.72.0 mask 255.255.255.0 gateway 192.168.45.66
+
+!enviar a P2
+ip static-route 195.85.73.0 mask 255.255.255.224 gateway 192.168.45.66
+ip static-route 195.85.73.32 mask 255.255.255.240 gateway 192.168.45.66
+
+!internet
+ip static-route 0.0.0.0 mask 0.0.0.0 gateway 192.98.17.62
+
