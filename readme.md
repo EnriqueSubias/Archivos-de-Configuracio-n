@@ -12,12 +12,15 @@ R-EB-P1 (Altillo) Ruben
 # VLAN 2 Producción - 195.85.72.0/25
 (R-EA-PB Robert Con VLAN 14 Dinámica)
 
-R-EA-PB Robert(VLAN 14) puerto 1/1 &nbsp;&nbsp;&nbsp;&nbsp;<code>sudo ifconfig enp3s0 195.85.72.2/25 up</code><br>
-R-EA-P1 Adria           puerto 8/1 <code>sudo ifconfig enp3s0 195.85.72.3/25 up</code><br>
-R-EA-P2 Enrique         puerto 8/1 <code>sudo ifconfig enp3s0 195.85.72.4/25 up</code><br>
-R-EB-P0-0 Victor        puerto 8/1 <code>sudo ifconfig enp3s0 195.85.72.5/25 up</code><br>
-R-EB-P0-1 Ruben         puerto 8/1 <code>sudo ifconfig enp3s0 195.85.72.6/25 up</code><br>
-R-EB-P1 (Al) Ruben      puerto 1/1 <code>sudo ifconfig enp4s0 195.85.72.7/25 up</code><br>
+
+| Rack          | Name          | Puerto      | comando |  
+| ------------- | ------------- | --------    | --------| 
+| R-EA-PB | Robert(VLAN 14) | puerto 1/1  | `sudo ifconfig enp3s0 195.85.72.2/25 up`
+| R-EA-P1 | Adria           | puerto 8/1  | `sudo ifconfig enp3s0 195.85.72.3/25 up`
+| R-EA-P2 | Enrique         | puerto 8/1  | `sudo ifconfig enp3s0 195.85.72.4/25 up`
+| R-EB-P0-0 | Victor        | puerto 8/1  | `sudo ifconfig enp3s0 195.85.72.5/25 up`
+| R-EB-P0-1 | Ruben         | puerto 8/1  | `sudo ifconfig enp3s0 195.85.72.6/25 up`
+| R-EB-P1 (Al) | Ruben      | puerto 1/1  | `sudo ifconfig enp4s0 195.85.72.7/25 up`
 
 P1&P2       (nivel 3) : <code>sudo route add -net 0.0.0.0 netmask 0.0.0.0 gw 195.85.72.1</code>
 
