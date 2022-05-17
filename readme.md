@@ -60,6 +60,25 @@ Todos (nivel 3) `sudo route add -net 0.0.0.0 netmask 0.0.0.0 gw 195.85.72.193`
 Todos (nivel 3) `sudo route add -net 0.0.0.0 netmask 0.0.0.0 gw 195.85.73.1/27`
 
 
+# VLAN 6 Expediciones - 195.85.73.32/28
+| Rack           | Name             | Puerto     | Comando                                   | Ping                |
+|----------------|------------------|------------|-------------------------------------------|---------------------|
+| R-EA-PB        | Robert           | puerto 2/8 | `sudo ifconfig enp3s0 195.85.73.34/28 up` | `ping 195.85.73.34` |
+| R-EB-P0-0      | Victor           | puerto 8/5 | `sudo ifconfig enp3s0 195.85.73.36/28 up` | `ping 195.85.73.36` |
+| R-EB-P0-1      | Ruben            | puerto 8/4 | `sudo ifconfig enp3s0 195.85.73.37/28 up` | `ping 195.85.73.37` |
+| R-EB-P1 (Al)   | Ruben            | puerto 1/3 | `sudo ifconfig enp4s0 195.85.73.38/28 up` | `ping 195.85.73.38` |
+
+Todos (nivel 3) `sudo route add -net 0.0.0.0 netmask 0.0.0.0 gw 195.85.73.33`
+
+
+# VLAN 7 PLC - 195.85.72.0/24
+| Rack         | Name     | Puerto     | comando                                  | Pings              |
+|--------------|----------|------------|------------------------------------------|--------------------|
+| R-EB-P0-0    | Victor   | puerto 8/1 | `sudo ifconfig enp3s0 195.85.74.2/24 up` | `ping 195.85.74.2` |
+| R-EB-P0-1    | Ruben    | puerto 8/1 | `sudo ifconfig enp3s0 195.85.74.3/24 up` | `ping 195.85.74.3` |
+| R-EB-P1 (Al) | Ruben    | puerto 1/1 | `sudo ifconfig enp4s0 195.85.74.4/24 up` | `ping 195.85.74.4` |
+
+Todos (nivel 3) `sudo route add -net 0.0.0.0 netmask 0.0.0.0 gw 195.85.74.1`
 
 # VLAN 8 Seguridad  - 195.85.72.0/24
 Importante, hacer las pruebas antes de hacer `port-security`
