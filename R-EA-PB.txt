@@ -26,7 +26,7 @@ vlan 10 port default 2/15-16
 
 vlan 11 enable name "Radioenlace"
 
-vlan 12 enable name "Operadora-de-telefonia"
+vlan 12 enable name "Operadora-de-Internet"
 vlan 12 port default 3/1
 
 vlan 13 enable name "Gestión-de-red"
