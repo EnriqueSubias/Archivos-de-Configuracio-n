@@ -24,7 +24,7 @@ R-EB-P1 (Altillo) Ruben
 | R-EB-P0-1    | Ruben            | puerto 8/1 | `sudo ifconfig enp3s0 195.85.72.6/25 up` | `ping 195.85.72.6` |
 | R-EB-P1 (Al) | Ruben            | puerto 1/1 | `sudo ifconfig enp4s0 195.85.72.7/25 up` | `ping 195.85.72.7` |
 
-Todos (nivel 3) `sudo route add -net 192.85.72.0 netmask 255.255.254.0 gw 195.85.72.1`
+Todos (nivel 3) `sudo route add -net 195.85.72.0 netmask 255.255.254.0 gw 195.85.72.1`
 
 
 # VLAN 3 Comercial - 195.85.72.128/26
