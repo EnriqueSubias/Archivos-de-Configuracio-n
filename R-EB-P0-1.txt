@@ -24,32 +24,31 @@ vlan 13 enable name "Gestion-de-red"
 vlan 13 port default 8/21
 
 
-!Link Aggregation (no chekeado)
+!Link Aggregation (chekeado)
+
+lacp linkagg 2 size 3 actor admin key 5 name "R-EB-P0-1"
+
+lacp agg 8/22 actor admin key 5
+lacp agg 8/23 actor admin key 5
+lacp agg 8/24 actor admin key 5
+
+vlan 7 port default 2
+
+
 ! -> show mac-address-table
-lacp linkagg 3 size 4 admin state enable
-lacp linkagg 3 name "R-EB-P0-1"
+! lacp linkagg 2 size 3 admin state enable
+! lacp agg 8/22 actor system id <mac>
+! lacp agg 8/23 actor system id <mac>
+! lacp agg 8/24 actor system id <mac>
 
-lacp agg 8/22 actor admin key 0
-lacp agg 8/22 actor system id <mac>
-
-lacp agg 8/23 actor system id <mac>
-lacp agg 8/23 actor admin key 0
-
-lacp agg 8/24 actor system id <mac>
-lacp agg 8/24 actor admin key 0
-
-! TODO Checkear esto pq noseyo
-vlan 7 port default 3
 
 
 !802.1Q (chekeado :D)
 vlan 2 802.1q 8/21 “PORT 8/21 - Produccion"
 vlan 5 802.1q 8/21 “PORT 8/21 - Calidad"
 vlan 6 802.1q 8/21 “PORT 8/21 - Expediciones"
-! vlan 7 802.1q 8/21 “PORT 8/21 - PLC"
 vlan 8 802.1q 8/21 “PORT 8/21 - Seguridad"
 vlan 10 802.1q 8/21 “PORT 8/21 - Puntos-de-acceso"
-! vlan 13 802.1q 8/21 “PORT 8/21 - Gestion-de-red"
 
 
 !RSTP (chekeado :D)

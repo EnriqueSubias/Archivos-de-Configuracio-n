@@ -23,19 +23,18 @@ vlan 9 port default 8/15-16
 vlan 10 enable name "Puntos-de-acceso"
 vlan 10 port default 8/17-18
 
-vlan 13 enable name "Gestión-de-red"
+vlan 13 enable name "Gestion-de-red"
 vlan 13 port default 8/21
 
-802.1Q - Puerto 8/24 va a R-EA-PB
-vlan 2 802.1q 8/21 “PORT 8/21 - Produccion"
-vlan 3 802.1q 8/21 “PORT 8/21 - Comercial"
-vlan 4 802.1q 8/21 “PORT 2/21 - Administracion"
-vlan 5 802.1q 8/21 “PORT 2/21 - Calidad"
-
-vlan 8 802.1q 8/21 “PORT 2/21 - Seguridad"
-vlan 9 802.1q 8/22 “PORT 2/21 - Climatizacion"
-vlan 10 802.1q 8/21 “PORT 2/21 - Puntos-de-acceso"
-vlan 13 802.1q 8/21 “PORT 2/21 - Gestion-de-red"
+! 802.1Q - Puerto 8/24 va a R-EA-PB
+vlan 2 802.1q 8/24 “PORT 8/24 - Produccion"
+vlan 3 802.1q 8/24 “PORT 8/24 - Comercial"
+vlan 4 802.1q 8/24 “PORT 8/24 - Administracion"
+vlan 5 802.1q 8/24 “PORT 8/24 - Calidad"
+vlan 6 802.1q 8/24 “PORT 8/24 - Expediciones"
+vlan 8 802.1q 8/24 “PORT 8/24 - Seguridad"
+vlan 9 802.1q 8/24 “PORT 8/24 - Climatizacion"
+vlan 10 802.1q 8/24 “PORT 8/24 - Puntos-de-acceso"
 
 
 !RSTP
@@ -44,6 +43,7 @@ bridge 1x1 2 protocol RSTP
 bridge 1x1 3 protocol RSTP
 bridge 1x1 4 protocol RSTP
 bridge 1x1 5 protocol RSTP
+bridge 1x1 6 protocol RSTP
 bridge 1x1 8 protocol RSTP
 bridge 1x1 9 protocol RSTP
 bridge 1x1 10 protocol RSTP
@@ -69,9 +69,11 @@ port-security 2/13 mac-range high 00:e0:ff:ff:ff:ff
 ip interface "if-gestion-de-red" address 192.168.45.66 mask 255.255.255.240 vlan 13
 
 !Departamentos
-ip interface "Comercial" 195.85.72.128 mask 255.255.255.192 vlan 3
-ip interface "Administracion" 195.85.72.192 mask 255.255.255.192 vlan 4
-ip interface "Expediciones" 195.85.73.32 mask 255.255.255.240 gateway vlan 6
+ip interface "Comercial" address 195.85.72.128 mask 255.255.255.192 vlan 3
+ip interface "Administracion" address 195.85.72.192 mask 255.255.255.192 vlan 4
+ip interface "Expediciones" address 195.85.73.32 mask 255.255.255.240 vlan 6
 
+
+! Tablas de Encaminamiento
 
 ip static-route 0.0.0.0 mask 0.0.0.0 gateway 192.168.45.65

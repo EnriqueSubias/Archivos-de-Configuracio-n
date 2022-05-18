@@ -29,7 +29,7 @@ vlan 11 enable name "Radioenlace"
 vlan 12 enable name "Operadora-de-Internet"
 vlan 12 port default 3/1
 
-vlan 13 enable name "Gestión-de-red"
+vlan 13 enable name "Gestion-de-red"
 vlan 13 port default 2/21-24
 
 vlan 14 enable name "Sala multimedia"
@@ -146,16 +146,17 @@ ip rip redist status enable
 ip rip status enable
 
 
-!enviar a P1
-    !ip static-route 195.85.72.0 mask 255.255.255.128 gateway 192.168.45.66
+!enviar a P1   VLANS (3 y 4) y 6
     !ip static-route 195.85.72.128 mask 255.255.255.192 gateway 192.168.45.66
     !ip static-route 195.85.72.192 mask 255.255.255.192 gateway 192.168.45.66
 ip static-route 195.85.72.0 mask 255.255.255.0 gateway 192.168.45.66
 
-!enviar a P2
-ip static-route 195.85.73.0 mask 255.255.255.224 gateway 192.168.45.66
-ip static-route 195.85.73.32 mask 255.255.255.240 gateway 192.168.45.66
+!enviar a P2   VLANS 2, 5, y 11
+ip static-route 195.85.72.0 mask 255.255.255.128 gateway 192.168.45.67
+ip static-route 195.85.73.0 mask 255.255.255.224 gateway 192.168.45.67
+! Radioenlace
+ip static-route 192.168.20.176 mask 255.255.255.248 gateway 192.168.45.67
+
 
 !internet
 ip static-route 0.0.0.0 mask 0.0.0.0 gateway 192.98.17.62
-

@@ -33,10 +33,10 @@ vlan 2 802.1q 8/24 “PORT 8/24 - Produccion"
 vlan 3 802.1q 8/24 “PORT 8/24 - Comercial"
 vlan 4 802.1q 8/24 “PORT 8/24 - Administracion"
 vlan 5 802.1q 8/24 “PORT 8/24 - Calidad"
-vlan 6 802.1q 8/24 “PORT 8/24 - Expediciones"
 vlan 8 802.1q 8/24 “PORT 8/24 - Seguridad"
 vlan 9 802.1q 8/24 “PORT 8/24 - Climatizacion"
 vlan 10 802.1q 8/24 “PORT 8/24 - Puntos-de-acceso"
+vlan 11 802.1q 8/24 “PORT 8/24 - Radioenlace"
 
 
 !RSTP
@@ -45,7 +45,6 @@ bridge 1x1 2 protocol RSTP
 bridge 1x1 3 protocol RSTP
 bridge 1x1 4 protocol RSTP
 bridge 1x1 5 protocol RSTP
-bridge 1x1 6 protocol RSTP
 bridge 1x1 8 protocol RSTP
 bridge 1x1 9 protocol RSTP
 bridge 1x1 10 protocol RSTP
@@ -76,13 +75,12 @@ ip interface "if-gestion-de-red" address 192.168.45.67 mask 255.255.255.240 vlan
 
 !Departamentos
 ip interface "Produccion" address 195.85.72.0 mask 255.255.255.128 vlan 2
-ip interface "Calidad" 195.85.73.0 mask 255.255.255.224 gateway vlan 5
-
+ip interface "Calidad" address 195.85.73.0 mask 255.255.255.224 vlan 5
 
 
 ! Tablas de Encaminamiento
 
-! Radioenlace
+! Radioenlace, envía a la Planta Baja
 ip static-route 48.18.59.160 mask 255.255.255.224 gateway 192.168.45.65
 ip static-route 193.41.8.128 mask 255.255.255.192 gateway 192.168.45.65
 ip static-route 154.3.14.0 mask 255.255.255.240 gateway 192.168.45.65

@@ -1,5 +1,16 @@
 !R-EB-P1 (Altillo) Ruben
 
+
+! aaa authentication ssh local
+! ip interface VLAN1 address 192.168.10.1/24 vlan 1
+
+! $ sudo ifconfig enp4s0 192.168.10.100 up
+
+! show mac-address-table
+
+! $ ssh admin@192.168.10.1
+
+
 !Asignacion de vlan (chekeado :D)
 vlan 2 enable name "Produccion"
 vlan 2 port default 1/1
