@@ -35,14 +35,15 @@ vlan 13 port default 2/21-24
 vlan 14 enable name "Sala multimedia"
 vlan 14 port mobile 1/1-5
 
-!vlan 15 enable name "Controladora"
-!vlan 15 port default 2/17
+vlan 15 enable name "Controladora"
+vlan 15 port default 2/17
 
 !802.1Q - Puerto 2/21 va a R-EA-P1
 vlan 2 802.1q 2/21 “PORT 2/21 - Produccion"
 vlan 3 802.1q 2/21 “PORT 2/21 - Comercial"
 vlan 4 802.1q 2/21 “PORT 2/21 - Administracion"
 vlan 5 802.1q 2/21 “PORT 2/21 - Calidad"
+vlan 6 802.1q 2/21 “PORT 2/21 - Expediciones"
 vlan 8 802.1q 2/21 “PORT 2/21 - Seguridad"
 vlan 9 802.1q 2/22 “PORT 2/21 - Climatizacion"
 vlan 10 802.1q 2/21 “PORT 2/21 - Puntos-de-acceso"
@@ -53,7 +54,6 @@ vlan 2 802.1q 2/22 “PORT 2/22 - Produccion"
 vlan 3 802.1q 2/22 “PORT 2/22 - Comercial"
 vlan 4 802.1q 2/22 “PORT 2/22 - Administracion"
 vlan 5 802.1q 2/22 “PORT 2/22 - Calidad"
-vlan 6 802.1q 2/22 "PORT 2/22 - Expediciones
 vlan 8 802.1q 2/22 “PORT 2/22 - Seguridad"
 vlan 9 802.1q 2/22 “PORT 2/22 - Climatizacion"
 vlan 10 802.1q 2/22 “PORT 2/22 - Puntos-de-acceso"
@@ -149,7 +149,10 @@ ip rip status enable
 !enviar a P1   VLANS (3 y 4) y 6
     !ip static-route 195.85.72.128 mask 255.255.255.192 gateway 192.168.45.66
     !ip static-route 195.85.72.192 mask 255.255.255.192 gateway 192.168.45.66
-ip static-route 195.85.72.0 mask 255.255.255.0 gateway 192.168.45.66
+
+ip static-route 195.85.72.128 mask 255.255.255.128 gateway 192.168.45.66
+ip static-route 195.85.73.32 mask 255.255.255.240 gateway 192.168.45.66
+
 
 !enviar a P2   VLANS 2, 5, y 11
 ip static-route 195.85.72.0 mask 255.255.255.128 gateway 192.168.45.67
