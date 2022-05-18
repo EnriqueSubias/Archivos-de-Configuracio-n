@@ -18,7 +18,7 @@ vlan 8 enable name "Seguridad"
 vlan 8 port default 8/13-16
 
 vlan 10 enable name "Puntos-de-acceso"
-vlan 10 port default 8/17-18
+vlan 10 port default 8/22-23
 
 vlan 13 enable name "Gestion-de-red"
 vlan 13 port default 8/21
