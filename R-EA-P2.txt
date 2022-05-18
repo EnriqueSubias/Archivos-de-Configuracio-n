@@ -29,14 +29,14 @@ vlan 13 port default 8/24
 
 
 !802.1Q
-vlan 2 802.1q 8/24 “PORT 8/24 - Produccion"
-vlan 3 802.1q 8/24 “PORT 8/24 - Comercial"
-vlan 4 802.1q 8/24 “PORT 8/24 - Administracion"
-vlan 5 802.1q 8/24 “PORT 8/24 - Calidad"
-vlan 8 802.1q 8/24 “PORT 8/24 - Seguridad"
-vlan 9 802.1q 8/24 “PORT 8/24 - Climatizacion"
-vlan 10 802.1q 8/24 “PORT 8/24 - Puntos-de-acceso"
-vlan 11 802.1q 8/24 “PORT 8/24 - Radioenlace"
+vlan 2 802.1q 8/24 "PORT 8/24 - Produccion"
+vlan 3 802.1q 8/24 "PORT 8/24 - Comercial"
+vlan 4 802.1q 8/24 "PORT 8/24 - Administracion"
+vlan 5 802.1q 8/24 "PORT 8/24 - Calidad"
+vlan 8 802.1q 8/24 "PORT 8/24 - Seguridad"
+vlan 9 802.1q 8/24 "PORT 8/24 - Climatizacion"
+vlan 10 802.1q 8/24 "PORT 8/24 - Puntos-de-acceso"
+vlan 11 802.1q 8/24 "PORT 8/24 - Radioenlace"
 
 
 !RSTP
