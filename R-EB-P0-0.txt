@@ -13,13 +13,13 @@ vlan 6 port default 8/5
 
 vlan 7 enable name "PLC"
 vlan 7 port default 8/6-12
-vlan 7 port default 8/22-24
+vlan 7 port default 8/17-19
 
 vlan 8 enable name "Seguridad"
 vlan 8 port default 8/13-16
 
 vlan 10 enable name "Puntos-de-acceso"
-vlan 10 port default 8/17-18
+vlan 10 port default 8/22-23
 
 vlan 13 enable name "Gestion-de-red"
 vlan 13 port default 8/20-21
@@ -27,11 +27,11 @@ vlan 13 port default 8/20-21
 
 !Link Aggregation
 
-lacp linkagg 2 size 3 actor admin key 5 name "R-EB-P0-0"
+lacp linkagg 2 size 4 actor admin key 5 name "R-EB-P0-0"
 
-lacp agg 8/22 actor admin key 5
-lacp agg 8/23 actor admin key 5
-lacp agg 8/24 actor admin key 5
+lacp agg 8/17 actor admin key 5
+lacp agg 8/18 actor admin key 5
+lacp agg 8/19 actor admin key 5
 
 vlan 7 port default 2
 
