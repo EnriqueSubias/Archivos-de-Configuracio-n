@@ -55,12 +55,10 @@ vlan 10 802.1q 1/24 “PORT 1/24 - Puntos-de-acceso"
 bridge mode 1x1 
 bridge 1x1 2 protocol RSTP
 bridge 1x1 3 protocol RSTP
-bridge 1x1 4 protocol RSTP
-bridge 1x1 5 protocol RSTP
 bridge 1x1 6 protocol RSTP
 bridge 1x1 7 protocol RSTP
 bridge 1x1 8 protocol RSTP
-bridge 1x1 10 protocol RSTP
+bridge 1x1 9 protocol RSTP
 bridge 1x1 13 protocol RSTP
 
 

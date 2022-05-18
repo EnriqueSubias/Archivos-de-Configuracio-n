@@ -2,16 +2,16 @@
 
 !Asignacion de vlan (chekeado :D)
 vlan 2 enable name "Produccion"
-vlan 2 port default 8/1-3
+vlan 2 port default 8/1-2
 
 vlan 5 enable name "Calidad"
-vlan 5 port default 8/4
+vlan 5 port default 8/3
 
 vlan 6 enable name "Expediciones"
-vlan 6 port default 8/5
+vlan 6 port default 8/4
 
 vlan 7 enable name "PLC"
-vlan 7 port default 8/6-12
+vlan 7 port default 8/5-12
 vlan 7 port default 8/22-24
 
 vlan 8 enable name "Seguridad"
