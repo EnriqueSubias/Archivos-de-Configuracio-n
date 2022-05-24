@@ -50,15 +50,15 @@ vlan 10 802.1q 2/21 "PORT 2/21 - Puntos-de-acceso"
 !vlan 13 802.1q 2/21 "PORT 2/21 - Gestion-de-red" ! No hace falta envair esta vlan
 
 !802.1Q - Puerto 2/22 va a R-EA-P2
-vlan 2 802.1q 2/22 “PORT 2/22 - Produccion"
-vlan 3 802.1q 2/22 “PORT 2/22 - Comercial"
-vlan 4 802.1q 2/22 “PORT 2/22 - Administracion"
-vlan 5 802.1q 2/22 “PORT 2/22 - Calidad"
-vlan 8 802.1q 2/22 “PORT 2/22 - Seguridad"
-vlan 9 802.1q 2/22 “PORT 2/22 - Climatizacion"
-vlan 10 802.1q 2/22 “PORT 2/22 - Puntos-de-acceso"
-vlan 11 802.1q 2/22 “PORT 2/22 - Radioenlace"
-!vlan 13 802.1q 2/22 “PORT 2/22 - Gestion-de-red"
+vlan 2 802.1q 2/22 "PORT 2/22 - Produccion"
+vlan 3 802.1q 2/22 "PORT 2/22 - Comercial"
+vlan 4 802.1q 2/22 "PORT 2/22 - Administracion"
+vlan 5 802.1q 2/22 "PORT 2/22 - Calidad"
+vlan 8 802.1q 2/22 "PORT 2/22 - Seguridad"
+vlan 9 802.1q 2/22 "PORT 2/22 - Climatizacion"
+vlan 10 802.1q 2/22 "PORT 2/22 - Puntos-de-acceso"
+vlan 11 802.1q 2/22 "PORT 2/22 - Radioenlace"
+!vlan 13 802.1q 2/22 "PORT 2/22 - Gestion-de-red"
 
 !802.1Q - Puerto 2/23 va a R-EB-PB-0-0
 vlan 2 802.1q 2/23 "PORT 2/23 - Produccion"
@@ -70,14 +70,14 @@ vlan 10 802.1q 2/23 "PORT 2/23 - Puntos-de-acceso"
 !vlan 13 802.1q 2/23 "PORT 2/23 - Gestion-de-red"
 
 !802.1Q - Puerto 2/24 va al Altillo
-vlan 2 802.1q 2/24 “PORT 2/24 - Produccion"
-vlan 3 802.1q 2/24 “PORT 2/24 - Comercial"
-vlan 6 802.1q 2/24 “PORT 2/24 - Expediciones"
-vlan 7 802.1q 2/24 “PORT 2/24 - PLC"
-vlan 8 802.1q 2/24 “PORT 2/24 - Seguridad"
-vlan 9 802.1q 2/24 “PORT 2/24 - Climatizacion"
-vlan 10 802.1q 2/24 “PORT 2/24 - Puntos-de-acceso"
-!vlan 13 802.1q 2/24 “PORT 2/24 - Gestion-de-red"
+vlan 2 802.1q 2/24 "PORT 2/24 - Produccion"
+vlan 3 802.1q 2/24 "PORT 2/24 - Comercial"
+vlan 6 802.1q 2/24 "PORT 2/24 - Expediciones"
+vlan 7 802.1q 2/24 "PORT 2/24 - PLC"
+vlan 8 802.1q 2/24 "PORT 2/24 - Seguridad"
+vlan 9 802.1q 2/24 "PORT 2/24 - Climatizacion"
+vlan 10 802.1q 2/24 "PORT 2/24 - Puntos-de-acceso"
+!vlan 13 802.1q 2/24 "PORT 2/24 - Gestion-de-red"
 
 
 bridge mode 1x1

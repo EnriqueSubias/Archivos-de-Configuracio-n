@@ -38,19 +38,19 @@ vlan 7 port default 2
 
 
 !802.1Q a su Vecino R-EB-P0-1
-vlan 2 802.1q 8/21 “PORT 8/21 - Produccion"
-vlan 5 802.1q 8/21 “PORT 8/21 - Calidad"
-vlan 6 802.1q 8/21 “PORT 8/21 - Expediciones"
-vlan 8 802.1q 8/21 “PORT 8/21 - Seguridad"
-vlan 10 802.1q 8/21 “PORT 8/21 - Puntos-de-acceso"
+vlan 2 802.1q 8/23 "PORT 8/23 - Produccion"
+vlan 5 802.1q 8/23 "PORT 8/23 - Calidad"
+vlan 6 802.1q 8/23 "PORT 8/23 - Expediciones"
+vlan 8 802.1q 8/23 "PORT 8/23 - Seguridad"
+vlan 10 802.1q 8/23 "PORT 8/23 - Puntos-de-acceso"
 
 !802.1Q a R-EA-PB
-vlan 2 802.1q 8/24 “PORT 8/24 - Produccion"
-vlan 5 802.1q 8/24 “PORT 8/24 - Calidad"
-vlan 6 802.1q 8/24 “PORT 8/24 - Expediciones"
-vlan 7 802.1q 8/24 “PORT 8/24 - PLC"
-vlan 8 802.1q 8/24 “PORT 8/24 - Seguridad"
-vlan 10 802.1q 8/24 “PORT 8/24 - Puntos-de-acceso"
+vlan 2 802.1q 8/24 "PORT 8/24 - Produccion"
+vlan 5 802.1q 8/24 "PORT 8/24 - Calidad"
+vlan 6 802.1q 8/24 "PORT 8/24 - Expediciones"
+vlan 7 802.1q 8/24 "PORT 8/24 - PLC"
+vlan 8 802.1q 8/24 "PORT 8/24 - Seguridad"
+vlan 10 802.1q 8/24 "PORT 8/24 - Puntos-de-acceso"
 
 
 !RSTP
