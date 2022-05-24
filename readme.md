@@ -30,11 +30,11 @@ $   `ifconfig enp3s0`
 
 $   `route -n`
 
-[user03@alcatel25 ~]$ route -n
-Kernel IP routing table
-Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
-0.0.0.0         38.17.33.33     0.0.0.0         UG    0      0        0 enp3s0
-38.17.33.32     0.0.0.0         255.255.255.240 U     0      0        0 enp3s0
+| route -n        |                |                  |         |          |       |      |          |
+|-----------------|----------------|------------------|---------|----------|-------|------|----------|
+| Destination     | Gateway        | Genmask          | Flags   | Metric   | Ref   | Use  | Iface    |
+| 0.0.0.0         | 195.85.72.1    | 0.0.0.0          | UG      | 0        | 0     | 0    | enp3s0   |
+| 195.85.72.0     | 0.0.0.0        | 255.255.255.128  | U       | 0        | 0     | 0    | enp3s0   |
 
 $   `sudo route del -net 0.0.0.0 netmask 0.0.0.0 dev enp3s0`
 
@@ -42,6 +42,8 @@ $   `sudo route del -net 0.0.0.0 netmask 0.0.0.0 dev enp3s0`
 
 
 # VLAN 2 Producción - 195.85.72.0/25
+Rango de IPs: 195.85.72.1 - 195.85.72.126
+
 | Rack         | Name             | Puerto     | Configurar la interfaz del PC            | Pings al resto     |
 |--------------|------------------|------------|------------------------------------------|--------------------|
 | R-EA-PB      | Robert (VLAN 14) | puerto 1/1 | `sudo ifconfig enp3s0 195.85.72.2/25 up` | `ping 195.85.72.2` |
@@ -55,6 +57,8 @@ Todos (nivel 3) `sudo route add -net 0.0.0.0 netmask 0.0.0.0 gw 195.85.72.1`
 
 
 # VLAN 3 Comercial - 195.85.72.128/26
+Rango de IPs: 195.85.72.129 - 195.85.72.190
+
 | Rack         | Name    | Puerto     | Configurar la interfaz del PC              | Pings al resto        |
 |--------------|---------|------------|--------------------------------------------|-----------------------|
 | R-EA-PB      | Robert  | puerto 2/1 | `sudo ifconfig enp3s0 195.85.72.130/26 up` | `ping 195.85.72.130`  |
@@ -66,6 +70,8 @@ Todos (nivel 3) `sudo route add -net 0.0.0.0 netmask 0.0.0.0 gw 195.85.72.129`
 
 
 # VLAN 4 Administración - 195.85.72.192/26
+Rango de IPs: 195.85.72.193 - 195.85.72.254
+
 | Rack    | Nombre  | Puerto     | Configurar la interfaz del PC              | Pings al resto        |
 |---------|---------|------------|--------------------------------------------|-----------------------|
 | R-EA-PB | Robert  | puerto 2/5 | `sudo ifconfig enp3s0 195.85.72.194/26 up` | `ping 195.85.72.194`  |
@@ -76,6 +82,8 @@ Todos (nivel 3) `sudo route add -net 0.0.0.0 netmask 0.0.0.0 gw 195.85.72.193`
 
 
 # VLAN 5 Calidad - 195.85.73.0/27
+Rango de IPs: 195.85.73.1 - 195.85.73.30
+
 | Rack      | Name             | Puerto      | Configurar la interfaz del PC            | Pings al resto     |
 |-----------|------------------|-------------|------------------------------------------|--------------------|
 | R-EA-PB   | Robert (VLAN 14) | puerto 1/1  | `sudo ifconfig enp3s0 195.85.73.2/27 up` | `ping 195.85.73.2` |
@@ -88,6 +96,8 @@ Todos (nivel 3) `sudo route add -net 0.0.0.0 netmask 0.0.0.0 gw 195.85.73.1/27`
 
 
 # VLAN 6 Expediciones - 195.85.73.32/28
+Rango de IPs: 195.85.73.33 - 195.85.73.46
+
 | Rack           | Name             | Puerto     | Comando                                   | Ping                |
 |----------------|------------------|------------|-------------------------------------------|---------------------|
 | R-EA-PB        | Robert           | puerto 2/8 | `sudo ifconfig enp3s0 195.85.73.34/28 up` | `ping 195.85.73.34` |
@@ -99,6 +109,8 @@ Todos (nivel 3) `sudo route add -net 0.0.0.0 netmask 0.0.0.0 gw 195.85.73.33`
 
 
 # VLAN 7 PLC - 195.85.72.0/24
+Rango de IPs: 195.85.72.1 - 195.85.72.254
+
 | Rack         | Name     | Puerto     | comando                                  | Pings              |
 |--------------|----------|------------|------------------------------------------|--------------------|
 | R-EB-P0-0    | Victor   | puerto 8/6 | `sudo ifconfig enp3s0 195.85.74.2/24 up` | `ping 195.85.74.2` |
@@ -111,6 +123,8 @@ Todos (nivel 3) `sudo route add -net 0.0.0.0 netmask 0.0.0.0 gw 195.85.74.1`
 -> `show linkagg 2`
 
 # VLAN 8 Seguridad  - 195.85.72.0/24
+Rango de IPs: 195.85.72.1 - 195.85.72.254
+
 Importante, hacer las pruebas antes de hacer `port-security`
 
 | Rack         | Name    | Puerto      | Configurar la interfaz del PC             | Pings al resto         |
@@ -125,6 +139,8 @@ Importante, hacer las pruebas antes de hacer `port-security`
 Todos (nivel 3) `sudo route add -net 0.0.0.0 netmask 0.0.0.0 gw 195.85.74.1`
 
 # VLAN 9 Climatizacion  - 10.82.40.128/26
+Rango de IPs: 10.82.40.129 - 10.82.40.190
+
 | Rack         | Name     | Puerto     | Configurar la interfaz del PC          | Pings               |
 |--------------|----------|------------|----------------------------------------|---------------------|
 | R-EB-P0-0    | Victor   | puerto 8/1 | `sudo ifconfig enp3s0 195.85.74.__/24` | `ping 195.85.74.__` |
@@ -179,6 +195,7 @@ Hacer ping a la interfaz de los switches desde tu switch
 
 
 
+# Tablas de encaminamiento
 
 
 
