@@ -24,7 +24,7 @@ vlan 10 enable name "Puntos-de-acceso"
 vlan 10 port default 8/17-18
 
 vlan 13 enable name "Gestion-de-red"
-vlan 13 port default 8/21
+vlan 13 port default 8/24
 
 ! 802.1Q - Puerto 8/24 va a R-EA-PB
 vlan 2 802.1q 8/24 "PORT 8/24 - Produccion"
