@@ -13,6 +13,33 @@ R-EB-P0-0 Ruben
 
 R-EB-P1 (Altillo) Ruben
 
+# Borrar configuración de los switchs
+
+->  `rm /flash/working/boot.cfg`
+
+->  `rm /flash/certified/boot.cfg`
+
+->  `reload`
+
+->  `write terminal`
+
+
+# Comprobar las tablas de encaminamiento de los PCs lo primero de toodo
+
+$   `ifconfig enp3s0`
+
+$   `route -n`
+
+[user03@alcatel25 ~]$ route -n
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         38.17.33.33     0.0.0.0         UG    0      0        0 enp3s0
+38.17.33.32     0.0.0.0         255.255.255.240 U     0      0        0 enp3s0
+
+$   `sudo route del -net 0.0.0.0 netmask 0.0.0.0 dev enp3s0`
+
+
+
 
 # VLAN 2 Producción - 195.85.72.0/25
 | Rack         | Name             | Puerto     | Configurar la interfaz del PC            | Pings al resto     |
@@ -24,7 +51,7 @@ R-EB-P1 (Altillo) Ruben
 | R-EB-P0-1    | Ruben            | puerto 8/1 | `sudo ifconfig enp3s0 195.85.72.6/25 up` | `ping 195.85.72.6` |
 | R-EB-P1 (Al) | Ruben            | puerto 1/1 | `sudo ifconfig enp4s0 195.85.72.7/25 up` | `ping 195.85.72.7` |
 
-Todos (nivel 3) `sudo route add -net 195.85.72.0 netmask 255.255.254.0 gw 195.85.72.1`
+Todos (nivel 3) `sudo route add -net 0.0.0.0 netmask 0.0.0.0 gw 195.85.72.1`
 
 
 # VLAN 3 Comercial - 195.85.72.128/26
@@ -115,7 +142,7 @@ Todos (nivel 3) `sudo route add -net 0.0.0.0 netmask 0.0.0.0 gw 195.85.74.1`
 
 # VLAN 14 Sala Multimedia
 TODO: Probar las VLANs 3, 4 y 6
-º
+
 # VLAN 15 Controladora  - 195.85.72.0/24
 
 
@@ -128,3 +155,31 @@ TODO: Probar las VLANs 3, 4 y 6
 
 # TODO
 Hacer ping a la interfaz de los switches desde tu switch
+
+# Comandos de utilidad
+
+->  `show mac-address-table`
+
+->  `show vlan port`
+
+
+# Al final de la clase hacer:
+
+->  `show spantree`
+
+->  `show spantree 13`
+
+->  `show ip route`
+
+->  `show ip router database`
+
+->  `show ip rip routes`
+
+->  `show ip rip peer`
+
+
+
+
+
+
+Hacer ping a cada una 

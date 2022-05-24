@@ -39,15 +39,15 @@ vlan 15 enable name "Controladora"
 vlan 15 port default 2/17
 
 !802.1Q - Puerto 2/21 va a R-EA-P1
-vlan 2 802.1q 2/21 “PORT 2/21 - Produccion"
-vlan 3 802.1q 2/21 “PORT 2/21 - Comercial"
-vlan 4 802.1q 2/21 “PORT 2/21 - Administracion"
-vlan 5 802.1q 2/21 “PORT 2/21 - Calidad"
-vlan 6 802.1q 2/21 “PORT 2/21 - Expediciones"
-vlan 8 802.1q 2/21 “PORT 2/21 - Seguridad"
-vlan 9 802.1q 2/22 “PORT 2/21 - Climatizacion"
-vlan 10 802.1q 2/21 “PORT 2/21 - Puntos-de-acceso"
-!vlan 13 802.1q 2/21 “PORT 2/21 - Gestion-de-red" ! No hace falta envair esta vlan
+vlan 2 802.1q 2/21 "PORT 2/21 - Produccion"
+vlan 3 802.1q 2/21 "PORT 2/21 - Comercial"
+vlan 4 802.1q 2/21 "PORT 2/21 - Administracion"
+vlan 5 802.1q 2/21 "PORT 2/21 - Calidad"
+vlan 6 802.1q 2/21 "PORT 2/21 - Expediciones"
+vlan 8 802.1q 2/21 "PORT 2/21 - Seguridad"
+vlan 9 802.1q 2/22 "PORT 2/21 - Climatizacion"
+vlan 10 802.1q 2/21 "PORT 2/21 - Puntos-de-acceso"
+!vlan 13 802.1q 2/21 "PORT 2/21 - Gestion-de-red" ! No hace falta envair esta vlan
 
 !802.1Q - Puerto 2/22 va a R-EA-P2
 vlan 2 802.1q 2/22 “PORT 2/22 - Produccion"
@@ -61,13 +61,13 @@ vlan 11 802.1q 2/22 “PORT 2/22 - Radioenlace"
 !vlan 13 802.1q 2/22 “PORT 2/22 - Gestion-de-red"
 
 !802.1Q - Puerto 2/23 va a R-EB-PB-0-0
-vlan 2 802.1q 2/23 “PORT 2/23 - Produccion"
-vlan 5 802.1q 2/23 “PORT 2/23 - Calidad"
-vlan 6 802.1q 2/23 “PORT 2/23 - Expediciones"
-vlan 7 802.1q 2/23 “PORT 2/23 - PLC"
-vlan 8 802.1q 2/23 “PORT 2/23 - Seguridad"
-vlan 10 802.1q 2/23 “PORT 2/23 - Puntos-de-acceso"
-!vlan 13 802.1q 2/23 “PORT 2/23 - Gestion-de-red"
+vlan 2 802.1q 2/23 "PORT 2/23 - Produccion"
+vlan 5 802.1q 2/23 "PORT 2/23 - Calidad"
+vlan 6 802.1q 2/23 "PORT 2/23 - Expediciones"
+vlan 7 802.1q 2/23 "PORT 2/23 - PLC"
+vlan 8 802.1q 2/23 "PORT 2/23 - Seguridad"
+vlan 10 802.1q 2/23 "PORT 2/23 - Puntos-de-acceso"
+!vlan 13 802.1q 2/23 "PORT 2/23 - Gestion-de-red"
 
 !802.1Q - Puerto 2/24 va al Altillo
 vlan 2 802.1q 2/24 “PORT 2/24 - Produccion"
@@ -136,6 +136,12 @@ vlan 6 ip 195.85.73.32 255.255.255.240
 ip interface "if-gestion-de-red" address 192.168.45.65 mask 255.255.255.240 vlan 13
 ip interface "if-internet" address 192.98.17.55 mask 255.255.255.240 vlan 12
 
+    ! ip interface "produccion" address 195.85.72.0 mask 255.255.255.128 vlan 2
+    ! ip interface "comercial" address 195.85.72.128 mask 255.255.255.19 vlan 3
+    ! ip interface "administracion" address 195.85.72.192 mask 255.255.255.192 vlan 4
+    ! ip interface "calidad" address ...
+
+
 !RIP
 ip load rip
 ip rip interface "if-internet"
@@ -157,9 +163,13 @@ ip static-route 195.85.73.32 mask 255.255.255.240 gateway 192.168.45.66
 !enviar a P2   VLANS 2, 5, y 11
 ip static-route 195.85.72.0 mask 255.255.255.128 gateway 192.168.45.67
 ip static-route 195.85.73.0 mask 255.255.255.224 gateway 192.168.45.67
-! Radioenlace
-ip static-route 192.168.20.176 mask 255.255.255.248 gateway 192.168.45.67
 
 
-!internet
+! Radioenlace Envia a la P2
+ip static-route 48.18.59.160 mask 255.255.255.224 gateway 192.168.45.67
+ip static-route 193.41.8.128 mask 255.255.255.192 gateway 192.168.45.67
+ip static-route 154.3.14.0 mask 255.255.255.240 gateway 192.168.45.67
+ip static-route 79.64.187.55 mask 255.255.255.255 gateway 192.168.45.67
+
+!internet (Lo que no sabe donde mandar lo envía por internet)
 ip static-route 0.0.0.0 mask 0.0.0.0 gateway 192.98.17.62

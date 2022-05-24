@@ -66,11 +66,9 @@ port-security 2/15 mac-range low 00:e0:ff:00:00:00
 port-security 2/15 mac-range high 00:e0:ff:ff:ff:ff
 
 
-
 ! NIVEL 3
 
-ip interface "if-radioenlace" address 192.168.20.183 mask 255.255.255.248 vlan 11
-
+ip inteface "if-radioenlace" address 192.168.20.176 mask 255.255.255.248 vlan 11
 ip interface "if-gestion-de-red" address 192.168.45.67 mask 255.255.255.240 vlan 13
 
 !Departamentos
@@ -79,11 +77,11 @@ ip interface "Calidad" address 195.85.73.0 mask 255.255.255.224 vlan 5
 
 
 ! Tablas de Encaminamiento
-
-! Radioenlace, envía a la Planta Baja
-ip static-route 48.18.59.160 mask 255.255.255.224 gateway 192.168.45.65
-ip static-route 193.41.8.128 mask 255.255.255.192 gateway 192.168.45.65
-ip static-route 154.3.14.0 mask 255.255.255.240 gateway 192.168.45.65
-ip static-route 79.64.187.55 mask 255.255.255.255 gateway 192.168.45.65
-
 ip static-route 0.0.0.0 mask 0.0.0.0 gateway 192.168.45.65
+
+
+    ! HACER SOLO SI NO FUNCIONA EL RADIOENLACE
+    ! ip static-route 48.18.59.160 mask 255.255.255.224 gateway 192.168.20.177
+    ! ip static-route 193.41.8.128 mask 255.255.255.192 gateway 192.168.20.177
+    ! ip static-route 154.3.14.0 mask 255.255.255.240 gateway 192.168.20.177
+    ! ip static-route 79.64.187.55 mask 255.255.255.255 gateway 192.168.20.177

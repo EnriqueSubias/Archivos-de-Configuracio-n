@@ -21,7 +21,7 @@ vlan 10 enable name "Puntos-de-acceso"
 vlan 10 port default 8/22-23
 
 vlan 13 enable name "Gestion-de-red"
-vlan 13 port default 8/21
+vlan 13 port default 8/24
 
 
 !Link Aggregation (chekeado)
@@ -35,20 +35,12 @@ lacp agg 8/19 actor admin key 5
 vlan 7 port default 2
 
 
-! -> show mac-address-table
-! lacp linkagg 2 size 3 admin state enable
-! lacp agg 8/22 actor system id <mac>
-! lacp agg 8/23 actor system id <mac>
-! lacp agg 8/24 actor system id <mac>
-
-
-
 !802.1Q (chekeado :D)
-vlan 2 802.1q 8/21 “PORT 8/21 - Produccion"
-vlan 5 802.1q 8/21 “PORT 8/21 - Calidad"
-vlan 6 802.1q 8/21 “PORT 8/21 - Expediciones"
-vlan 8 802.1q 8/21 “PORT 8/21 - Seguridad"
-vlan 10 802.1q 8/21 “PORT 8/21 - Puntos-de-acceso"
+vlan 2 802.1q 8/24 "PORT 8/24 - Produccion"
+vlan 5 802.1q 8/24 "PORT 8/24 - Calidad"
+vlan 6 802.1q 8/24 "PORT 8/24 - Expediciones"
+vlan 8 802.1q 8/24 "PORT 8/24 - Seguridad"
+vlan 10 802.1q 8/24 "PORT 8/24 - Puntos-de-acceso"
 
 
 !RSTP (chekeado :D)
@@ -84,3 +76,9 @@ port-security 8/16 mac-range high 00:e0:ff:ff:ff:ff
 
 !Interface
 ip interface "if-gestion-de-red" address 192.168.45.69 mask 255.255.255.240 vlan 13
+
+    ! HACER SOLO SI NO FUNCIONA EL RADIOENLACE
+    ! ip static-route 48.18.59.160 mask 255.255.255.224 gateway 192.168.45.67
+    ! ip static-route 193.41.8.128 mask 255.255.255.192 gateway 192.168.45.67
+    ! ip static-route 154.3.14.0 mask 255.255.255.240 gateway 192.168.45.67
+    ! ip static-route 79.64.187.55 mask 255.255.255.255 gateway 192.168.45.67

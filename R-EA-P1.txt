@@ -27,14 +27,14 @@ vlan 13 enable name "Gestion-de-red"
 vlan 13 port default 8/21
 
 ! 802.1Q - Puerto 8/24 va a R-EA-PB
-vlan 2 802.1q 8/24 “PORT 8/24 - Produccion"
-vlan 3 802.1q 8/24 “PORT 8/24 - Comercial"
-vlan 4 802.1q 8/24 “PORT 8/24 - Administracion"
-vlan 5 802.1q 8/24 “PORT 8/24 - Calidad"
-vlan 6 802.1q 8/24 “PORT 8/24 - Expediciones"
-vlan 8 802.1q 8/24 “PORT 8/24 - Seguridad"
-vlan 9 802.1q 8/24 “PORT 8/24 - Climatizacion"
-vlan 10 802.1q 8/24 “PORT 8/24 - Puntos-de-acceso"
+vlan 2 802.1q 8/24 "PORT 8/24 - Produccion"
+vlan 3 802.1q 8/24 "PORT 8/24 - Comercial"
+vlan 4 802.1q 8/24 "PORT 8/24 - Administracion"
+vlan 5 802.1q 8/24 "PORT 8/24 - Calidad"
+vlan 6 802.1q 8/24 "PORT 8/24 - Expediciones"
+vlan 8 802.1q 8/24 "PORT 8/24 - Seguridad"
+vlan 9 802.1q 8/24 "PORT 8/24 - Climatizacion"
+vlan 10 802.1q 8/24 "PORT 8/24 - Puntos-de-acceso"
 
 
 !RSTP
