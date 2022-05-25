@@ -53,27 +53,27 @@ bridge 1x1 13 protocol RSTP
 
 
 !Mac Address Filter
-port-security 2/13
-port-security 2/13 mac-range low 00:e0:ff:00:00:00
-port-security 2/13 mac-range high 00:e0:ff:ff:ff:ff
+port-security 8/13
+port-security 8/13 mac-range low 00:e0:ff:00:00:00
+port-security 8/13 mac-range high 00:e0:ff:ff:ff:ff
 
-port-security 2/14
-port-security 2/14 mac-range low 00:e0:ff:00:00:00
-port-security 2/14 mac-range high 00:e0:ff:ff:ff:ff
+port-security 8/14
+port-security 8/14 mac-range low 00:e0:ff:00:00:00
+port-security 8/14 mac-range high 00:e0:ff:ff:ff:ff
 
-port-security 2/15
-port-security 2/15 mac-range low 00:e0:ff:00:00:00
-port-security 2/15 mac-range high 00:e0:ff:ff:ff:ff
+port-security 8/15
+port-security 8/15 mac-range low 00:e0:ff:00:00:00
+port-security 8/15 mac-range high 00:e0:ff:ff:ff:ff
 
 
 ! NIVEL 3
 
-ip inteface "if-radioenlace" address 192.168.20.176 mask 255.255.255.248 vlan 11
+ip inteface "if-radioenlace" address 192.168.20.182 mask 255.255.255.248 vlan 11
 ip interface "if-gestion-de-red" address 192.168.45.67 mask 255.255.255.240 vlan 13
 
 !Departamentos
-ip interface "Produccion" address 195.85.72.0 mask 255.255.255.128 vlan 2
-ip interface "Calidad" address 195.85.73.0 mask 255.255.255.224 vlan 5
+ip interface "Produccion" address 195.85.72.1 mask 255.255.255.128 vlan 2
+ip interface "Calidad" address 195.85.73.1 mask 255.255.255.224 vlan 5
 
 
 ! Tablas de Encaminamiento

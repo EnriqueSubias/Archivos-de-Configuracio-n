@@ -70,8 +70,8 @@ ip interface "if-gestion-de-red" address 192.168.45.66 mask 255.255.255.240 vlan
 
 !Departamentos
 ip interface "Comercial" address 195.85.72.128 mask 255.255.255.192 vlan 3
-ip interface "Administracion" address 195.85.72.192 mask 255.255.255.192 vlan 4
-ip interface "Expediciones" address 195.85.73.32 mask 255.255.255.240 vlan 6
+ip interface "Administracion" address 195.85.72.193 mask 255.255.255.192 vlan 4
+ip interface "Expediciones" address 195.85.73.33 mask 255.255.255.240 vlan 6
 
 
 ! Tablas de Encaminamiento
