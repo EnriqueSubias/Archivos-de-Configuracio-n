@@ -42,13 +42,13 @@ vlan 13 port default 1/24
 
 
 !802.1Q (chekeado :D)
-vlan 2 802.1q 1/24 “PORT 1/24 - Produccion"
-vlan 3 802.1q 1/24 “PORT 1/24 - Comercial"
-vlan 6 802.1q 1/24 “PORT 1/24 - Expediciones"
-vlan 7 802.1q 1/24 “PORT 1/24 - PLC"
-vlan 8 802.1q 1/24 “PORT 1/24 - Seguridad"
-vlan 9 802.1q 1/24 “PORT 1/24 - Climatiacion"
-vlan 10 802.1q 1/24 “PORT 1/24 - Puntos-de-acceso"
+vlan 2 802.1q 1/24 "PORT 1/24 - Produccion"
+vlan 3 802.1q 1/24 "PORT 1/24 - Comercial"
+vlan 6 802.1q 1/24 "PORT 1/24 - Expediciones"
+vlan 7 802.1q 1/24 "PORT 1/24 - PLC"
+vlan 8 802.1q 1/24 "PORT 1/24 - Seguridad"
+vlan 9 802.1q 1/24 "PORT 1/24 - Climatiacion"
+vlan 10 802.1q 1/24 "PORT 1/24 - Puntos-de-acceso"
 
 
 !RSTP (chekeado :D)
