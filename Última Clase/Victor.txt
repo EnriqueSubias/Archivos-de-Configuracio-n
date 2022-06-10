@@ -1,5 +1,5 @@
 ! Chassis :                                                                     
-system name "ARP-1"                                                             
+system name "R-EB-P0-0"
 system timezone CET                                                             
 ! Configuration:                                                                
 ! VLAN :                                                                        
@@ -71,8 +71,8 @@ vlan 8 802.1q 8/23 "PORT 8/23 - Seguridad"
 vlan 10 802.1q 8/23 "PORT 8/23 - Puntos-de-acceso"                              
 vlan 2 802.1q 8/24 "PORT 8/24 - Produccion"                                     
 vlan 5 802.1q 8/24 "PORT 8/24 - Calidad"                                        
-vlan 6 802.1q 8/24 "PORT 8/24 - Expediciones"                                   
-vlan 7 802.1q 8/24 "PORT 8/24 - PLC"                                            
+vlan 6 802.1q 8/24 "PORT 8/24 - Expediciones"
+vlan 7 802.1q 8/24 "PORT 8/24 - PLC"
 vlan 8 802.1q 8/24 "PORT 8/24 - Seguridad"                                      
 vlan 10 802.1q 8/24 "PORT 8/24 - Puntos-de-acceso"                              
 ! Spanning tree :                                                               

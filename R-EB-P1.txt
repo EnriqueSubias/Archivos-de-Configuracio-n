@@ -61,4 +61,9 @@ bridge 1x1 8 protocol RSTP
 bridge 1x1 9 protocol RSTP
 bridge 1x1 13 protocol RSTP
 
+port-security 1/5
+port-security 1/5 mac-range 00:e0:ff:00:00:00-00:e0:ff:ff:ff:ff
+
+port-security 1/6
+port-security 1/5 mac-range 00:e0:ff:00:00:00-00:e0:ff:ff:ff:ff
 

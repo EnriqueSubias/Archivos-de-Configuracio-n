@@ -51,17 +51,17 @@ bridge 1x1 13 protocol RSTP
 
 
 !Mac Address Filter
-port-security 2/11
-port-security 2/11 mac-range low 00:e0:ff:00:00:00
-port-security 2/11 mac-range high 00:e0:ff:ff:ff:ff
+port-security 8/11
+port-security 8/11 mac-range low 00:e0:ff:00:00:00
+port-security 8/11 mac-range high 00:e0:ff:ff:ff:ff
 
-port-security 2/12
-port-security 2/12 mac-range low 00:e0:ff:00:00:00
-port-security 2/12 mac-range high 00:e0:ff:ff:ff:ff
+port-security 8/12
+port-security 8/12 mac-range low 00:e0:ff:00:00:00
+port-security 8/12 mac-range high 00:e0:ff:ff:ff:ff
 
-port-security 2/13
-port-security 2/13 mac-range low 00:e0:ff:00:00:00
-port-security 2/13 mac-range high 00:e0:ff:ff:ff:ff
+port-security 8/13
+port-security 8/13 mac-range low 00:e0:ff:00:00:00
+port-security 8/13 mac-range high 00:e0:ff:ff:ff:ff
 
 
 ! NIVEL 3

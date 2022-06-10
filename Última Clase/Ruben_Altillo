@@ -53,7 +53,7 @@ vlan 3 802.1q 1/24 "PORT 1/24 - Comercial"
 vlan 6 802.1q 1/24 "PORT 1/24 - Expediciones"
 vlan 7 802.1q 1/24 "PORT 1/24 - PLC"
 vlan 8 802.1q 1/24 "PORT 1/24 - Seguridad"
-vlan 9 802.1q 1/24 "PORT 1/24 - Climatiacion"
+vlan 9 802.1q 1/24 "PORT 1/24 - Climatizacion"
 vlan 10 802.1q 1/24 "PORT 1/24 - Puntos-de-acceso"
 ! Spanning tree :
 bridge mode 1x1 
@@ -64,3 +64,9 @@ bridge 1x1 7 protocol RSTP
 bridge 1x1 8 protocol RSTP
 bridge 1x1 9 protocol RSTP
 bridge 1x1 13 protocol RSTP
+! Bridging :
+! Bridging :
+port-security 1/5
+port-security 1/5 mac-range 00:e0:ff:00:00:00-00:e0:ff:ff:ff:ff
+port-security 1/6
+port-security 1/5 mac-range 00:e0:ff:00:00:00-00:e0:ff:ff:ff:ff

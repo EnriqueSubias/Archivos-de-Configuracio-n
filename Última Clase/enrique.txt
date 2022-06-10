@@ -1,6 +1,6 @@
 -> write terminal
 ! Chassis :
-system name "R2"
+system name "R-EA-P2"
 system timezone WET
 ! Configuration:
 ! VLAN :
