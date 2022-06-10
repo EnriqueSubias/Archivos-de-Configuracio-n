@@ -1,0 +1,106 @@
+! Chassis :
+system name "REAP2"
+system timezone CET
+! Configuration:
+! VLAN :
+vlan 2 enable name "Produccion"
+vlan 2 port default 8/1
+vlan 2 port default 8/2
+vlan 3 enable name "Comercial"
+vlan 3 port default 8/3
+vlan 3 port default 8/4
+vlan 3 port default 8/5
+vlan 4 enable name "Administracion"
+vlan 4 port default 8/6
+vlan 4 port default 8/7
+vlan 4 port default 8/8
+vlan 4 port default 8/9
+vlan 5 enable name "Calidad"
+vlan 5 port default 8/10
+vlan 5 port default 8/11
+vlan 6 enable name "Expediciones"
+vlan 8 enable name "Seguridad"
+vlan 8 port default 8/12
+vlan 8 port default 8/13
+vlan 8 port default 8/14                                                 
+vlan 9 enable name "Climatizacion"
+vlan 9 port default 8/15
+vlan 9 port default 8/16
+vlan 10 enable name "Puntos-de-acceso"
+vlan 10 port default 8/17
+vlan 10 port default 8/18
+vlan 13 enable name "Gestion-de-red"
+vlan 13 port default 8/24
+! VLAN SL:
+! IP :
+ip service all
+ip interface "if-gestion-de-red" address 192.168.45.66 mask 255.255.255.240 vlan 13 mtu 1500 ifindex 1
+ip interface "Comercial" address 195.85.72.129 mask 255.255.255.192 vlan 3 mtu 1500 ifindex 2
+ip interface "Administracion" address 195.85.72.193 mask 255.255.255.192 vlan 4 mtu 1500 ifindex 3
+ip interface "Expediciones" address 195.85.73.33 mask 255.255.255.240 vlan 6 mtu 1500 ifindex 4
+! IPMS :
+! AAA :
+aaa authentication console "local" 
+! PARTM :
+! AVLAN :
+! 802.1x :
+! QOS :
+! Policy manager :
+! Session manager :                                                      
+! SNMP :
+! IP route manager :
+ip static-route 0.0.0.0 mask 0.0.0.0 gateway 192.168.45.65 metric 1
+! RIP :
+! OSPF :
+! BGP :
+! IP multicast :
+! IPv6 :
+! RIPng :
+! Health monitor :
+! Interface :
+! Port Mapping :
+! Link Aggregate :
+! VLAN AGG:
+! 802.1Q :
+vlan 2 802.1q 8/24 "PORT 8/24 - Produccion"
+vlan 3 802.1q 8/24 "PORT 8/24 - Comercial"
+vlan 4 802.1q 8/24 "PORT 8/24 - Administracion"
+vlan 5 802.1q 8/24 "PORT 8/24 - Calidad"
+vlan 6 802.1q 8/24 "PORT 8/24 - Expediciones"
+vlan 8 802.1q 8/24 "PORT 8/24 - Seguridad"
+vlan 9 802.1q 8/24 "PORT 8/24 - Climatizacion"
+vlan 10 802.1q 8/24 "PORT 8/24 - Puntos-de-acceso"
+! Spanning tree :                                                        
+bridge mode 1x1 
+bridge 1x1 2 protocol RSTP 
+bridge 1x1 3 protocol RSTP 
+bridge 1x1 4 protocol RSTP 
+bridge 1x1 5 protocol RSTP 
+bridge 1x1 6 protocol RSTP 
+bridge 1x1 8 protocol RSTP 
+bridge 1x1 9 protocol RSTP 
+bridge 1x1 10 protocol RSTP 
+bridge 1x1 13 protocol RSTP 
+! Bridging :
+! Bridging :
+port-security 8/11
+port-security 8/11 mac-range low 00:e0:ff:00:00:00
+port-security 8/11 mac-range high 00:e0:ff:ff:ff:ff
+port-security 8/12
+port-security 8/12 mac-range low 00:e0:ff:00:00:00
+port-security 8/12 mac-range high 00:e0:ff:ff:ff:ff
+port-security 8/13
+port-security 8/13 mac-range low 00:e0:ff:00:00:00
+port-security 8/13 mac-range high 00:e0:ff:ff:ff:ff
+! Port mirroring :
+! UDP Relay :
+ip udp relay BOOTP                                                       
+! System service :
+! VRRP :
+! Web :
+! AMAP :
+! GMAP :
+! Lan  Power :
+! NTP :
+!RDP :
+

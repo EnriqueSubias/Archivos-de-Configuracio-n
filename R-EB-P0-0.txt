@@ -22,8 +22,7 @@ vlan 10 enable name "Puntos-de-acceso"
 vlan 10 port default 8/21-22
 
 vlan 13 enable name "Gestion-de-red"
-vlan 13 port default 8/23
-vlan 13 port default 8/24
+vlan 13 port default 8/23-24
 
 
 !Link Aggregation

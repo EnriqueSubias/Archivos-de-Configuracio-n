@@ -1,47 +1,53 @@
-!R-EB-P1 (Altillo) Ruben
-
-
-! aaa authentication ssh local
-! ip interface VLAN1 address 192.168.10.1/24 vlan 1
-
-! $ sudo ifconfig enp4s0 192.168.10.100 up
-
-! show mac-address-table
-
-! $ ssh admin@192.168.10.1
-
-
-!Asignacion de vlan (chekeado :D)
+! Stack Manager :
+! Chassis :
+system name "R-EB-P1"
+system daylight savings time disable
+! Configuration:
+! VLAN :
 vlan 2 enable name "Produccion"
 vlan 2 port default 1/1
-
 vlan 3 enable name "Comercial"
 vlan 3 port default 1/2
-
 vlan 4 enable name "Administracion"
-
 vlan 5 enable name "Calidad"
-
 vlan 6 enable name "Expediciones"
 vlan 6 port default 1/3
-
 vlan 7 enable name "PLC"
 vlan 7 port default 1/4
-
 vlan 8 enable name "Seguridad"
-vlan 8 port default 1/5-6
-
+vlan 8 port default 1/5
+vlan 8 port default 1/6
 vlan 9 enable name "Climatizacion"
 vlan 9 port default 1/7
-
 vlan 10 enable name "Puntos-de-acceso"
 vlan 10 port default 1/8
-
 vlan 13 enable name "Gestion-de-red"
 vlan 13 port default 1/24
-
-
-!802.1Q (chekeado :D)
+! VLAN SL:
+! IP :
+ip service all
+ip interface "if-gestion-de-red" address 192.168.45.69 mask 255.255.255.240 vlan 13 ifindex 2
+! IPMS :
+! AAA :
+! PARTM :
+! 802.1x :
+! QOS :
+! Policy manager :
+! Session manager :
+! SNMP :
+! RIP :
+! IPv6 :
+! IP multicast :
+! IPRM :
+! RIPng :
+! Health monitor :
+health threshold temperature 78
+! Interface :
+! Udld :
+! Port Mapping :
+! Link Aggregate :
+! VLAN AGG:
+! 802.1Q :
 vlan 2 802.1q 1/24 "PORT 1/24 - Produccion"
 vlan 3 802.1q 1/24 "PORT 1/24 - Comercial"
 vlan 6 802.1q 1/24 "PORT 1/24 - Expediciones"
@@ -49,9 +55,7 @@ vlan 7 802.1q 1/24 "PORT 1/24 - PLC"
 vlan 8 802.1q 1/24 "PORT 1/24 - Seguridad"
 vlan 9 802.1q 1/24 "PORT 1/24 - Climatiacion"
 vlan 10 802.1q 1/24 "PORT 1/24 - Puntos-de-acceso"
-
-
-!RSTP (chekeado :D)
+! Spanning tree :
 bridge mode 1x1 
 bridge 1x1 2 protocol RSTP
 bridge 1x1 3 protocol RSTP
@@ -60,5 +64,3 @@ bridge 1x1 7 protocol RSTP
 bridge 1x1 8 protocol RSTP
 bridge 1x1 9 protocol RSTP
 bridge 1x1 13 protocol RSTP
-
-

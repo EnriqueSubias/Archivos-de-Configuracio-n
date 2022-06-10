@@ -1,0 +1,106 @@
+! Chassis :
+system name "R-EB-P0-1"
+! Configuration:
+! VLAN :
+vlan 2 enable name "Produccion"
+vlan 2 port default 8/1
+vlan 2 port default 8/2
+vlan 5 enable name "Calidad"
+vlan 5 port default 8/3
+vlan 6 enable name "Expediciones"
+vlan 6 port default 8/4
+vlan 7 enable name "PLC"
+vlan 7 port default 8/5
+vlan 7 port default 8/6
+vlan 7 port default 8/7
+vlan 7 port default 8/8
+vlan 7 port default 8/9
+vlan 7 port default 8/10
+vlan 7 port default 8/11
+vlan 7 port default 8/12
+vlan 8 enable name "Seguridad"
+vlan 8 port default 8/13
+vlan 8 port default 8/14
+vlan 8 port default 8/15
+vlan 8 port default 8/16                                                 
+vlan 10 enable name "Puntos-de-acceso"
+vlan 10 port default 8/21
+vlan 10 port default 8/22
+vlan 13 enable name "Gestion-de-red"
+vlan 13 port default 8/24
+! VLAN SL:
+! IP :
+ip service all
+ip interface "if-gestion-de-red" address 192.168.45.69 mask 255.255.255.240 vlan 13 mtu 1500 ifindex 1
+! IPMS :
+! AAA :
+aaa authentication console "local" 
+! PARTM :
+! AVLAN :
+! 802.1x :
+! QOS :
+! Policy manager :
+! Session manager :
+! SNMP :
+! IP route manager :
+! RIP :
+! OSPF :
+! BGP :
+! IP multicast :                                                         
+! IPv6 :
+! RIPng :
+! Health monitor :
+! Interface :
+! Port Mapping :
+! Link Aggregate :
+lacp linkagg 2 size 4 admin state enable
+lacp linkagg 2 name "R-EB-P0-1"
+lacp linkagg 2 actor admin key 5
+lacp agg 8/17 actor admin key 5
+lacp agg 8/18 actor admin key 5
+lacp agg 8/19 actor admin key 5
+! VLAN AGG:
+vlan 7 port default 2
+! 802.1Q :
+vlan 2 802.1q 8/24 "PORT 8/24 - Produccion"
+vlan 5 802.1q 8/24 "PORT 8/24 - Calidad"
+vlan 6 802.1q 8/24 "PORT 8/24 - Expediciones"
+vlan 8 802.1q 8/24 "PORT 8/24 - Seguridad"
+vlan 10 802.1q 8/24 "PORT 8/24 - Puntos-de-acceso"
+! Spanning tree :
+bridge mode 1x1 
+bridge 1x1 2 protocol RSTP 
+bridge 1x1 5 protocol RSTP                                               
+bridge 1x1 6 protocol RSTP 
+bridge 1x1 7 protocol RSTP 
+bridge 1x1 8 protocol RSTP 
+bridge 1x1 10 protocol RSTP 
+bridge 1x1 13 protocol RSTP 
+! Bridging :
+! Bridging :
+port-security 8/13
+port-security 8/13 mac-range low 00:e0:ff:00:00:00
+port-security 8/13 mac-range high 00:e0:ff:ff:ff:ff
+port-security 8/14
+port-security 8/14 mac-range low 00:e0:ff:00:00:00
+port-security 8/14 mac-range high 00:e0:ff:ff:ff:ff
+port-security 8/15
+port-security 8/15 mac-range low 00:e0:ff:00:00:00
+port-security 8/15 mac-range high 00:e0:ff:ff:ff:ff
+port-security 8/16
+port-security 8/16 mac-range low 00:e0:ff:00:00:00
+port-security 8/16 mac-range high 00:e0:ff:ff:ff:ff
+! Port mirroring :
+! UDP Relay :
+ip udp relay BOOTP
+! System service :
+! VRRP :                                                                 
+! Web :
+! AMAP :
+! GMAP :
+! Lan  Power :
+! NTP :
+!RDP :
+->              
+                         
+
